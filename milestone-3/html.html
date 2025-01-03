@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Build</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div class="container" id="resume-form-section">
+        <h2>Build Your Resume</h2>
+        <form id="resume-form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name" class="form-element">Full Name:</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+
+            <label for="dob" class="form-element">DOB:</label>
+            <input type="date" id="dob" name="dob" class="form-input" min="1960-01-01" required>
+
+            <label for="email" class="form-element">Email:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+
+            <label for="phone" class="form-element">Cell #:</label>
+            <input type="text" id="phone" name="phone" class="form-input" required>
+
+            <label for="address" class="form-element">Address:</label>
+            <textarea id="address" name="address" class="form-input" required></textarea>
+
+            <label for="about" class="form-element">About Me:</label>
+            <textarea id="about" name="about" class="form-input" required></textarea>
+
+            <label for="photo" class="form-element">Upload Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" class="form-input">
+            </fieldset>
+
+            <fieldset>
+                <legend>Education</legend>
+                <label for="education" class="form-element">Education:</label>
+                <textarea id="education" name="education" rows="3" class="form-input" required></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Skills</legend>
+                <label for="skills" class="form-element">Skills (comma-separated):</label>
+                <input type="text" id="skills" name="skills" class="form-input" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Experience</legend>
+                <label for="experience" class="form-element">Work Experience:</label>
+                <textarea id="experience" name="experience" rows="3" class="form-input" required></textarea>
+            </fieldset>
+
+            <button type="submit" class="button">Generate CV</button>
+
+        </form>
+    </div>
+
+    <div  id="resume" style="display:none;">
+        <div id="section1">
+            <header>
+                <img id="display-photo" alt="">
+            </header>
+    
+            <section id="personal-info">
+                <ul>
+                    <li><span id="display-name"></span></li><br>
+                    <li><b>About Me: </b><br><span id="display-about"></span></li><br>
+                    <li><b>Date of Birth: </b><span id="display-dob"></span></li><br>
+                    <li><b>Phone: </b><br><span id="display-phone"></span></li><br>
+                    <li><b>Email: </b><br><span id="display-email"></span></li><br>
+                    <li><b>Address: </b><br><span id="display-address"></span></li>
+                </ul>
+            </section>
+        </div>
+
+        <div id="section2">
+            <section id="display-education">
+                <h2>Education <button class="toggle-btn" id="toggle-education">-</button></h2>
+                <ul id="educationList"></ul>
+            </section>
+    
+            <section id="display-skills">
+                <h2>Skills <button class="toggle-btn" id="toggle-skills" >-</button></h2>
+                <ul id="skillsList"></ul>
+            </section>
+    
+            <section id="display-experience">
+                <h2>Work Experience <button class="toggle-btn" id="toggle-work">-</button></h2>
+                <ul id="workList"></ul>
+            </section>
+        </div>
+
+        <button type="submit" class="button" id="regenerate-cv">Generate New</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
